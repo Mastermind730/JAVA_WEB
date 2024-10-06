@@ -1,10 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .main {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 380px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #f5f7fa;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #00b4db;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #0083b0, #006c90);
+        }
+
+        .form-container .extra-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .form-container .extra-link a {
+            color: #0083b0;
+            text-decoration: none;
+        }
+
+        .form-container .extra-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Floating circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .circle.small {
+            width: 80px;
+            height: 80px;
+            bottom: 10%;
+            left: 10%;
+            animation-duration: 7s;
+        }
+
+        .circle.medium {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            right: 15%;
+            animation-duration: 12s;
+        }
+
+        .circle.large {
+            width: 300px;
+            height: 300px;
+            bottom: 5%;
+            right: 20%;
+            animation-duration: 15s;
+        }
+    </style>
 </head>
 <body>
+    <div class="main">
+        <div class="form-container">
+            <h1>Register</h1>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
 
+                <input type="submit" value="Register">
+            </form>
+            <div class="extra-link">
+                <p>Already have an account? <a href="#">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating circles for background effect -->
+    <div class="circle small"></div>
+    <div class="circle medium"></div>
+    <div class="circle large"></div>
 </body>
 </html>
